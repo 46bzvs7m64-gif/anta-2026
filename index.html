@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>安踏 ANTA · 大众专业运动产品矩阵 | Keep Moving 永不止步</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        anta:      '#E60012',
+        antaDark:  '#B0000E',
+        antaDeep:  '#1C0B10',
+        antaLight: '#FDEDEF',
+        gold:      '#F6B93B'
+      },
+      fontFamily: {
+        sans: ['"Helvetica Neue"', 'Arial', '"PingFang SC"', '"Microsoft YaHei"', 'sans-serif']
+      }
+    }
+  }
+}
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif; }
+
+  /* 滚动入场动画 */
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.show { opacity: 1; transform: translateY(0); }
+
+  /* 产品卡片 */
+  .p-card { transition: transform .35s ease, box-shadow .35s ease; }
+  .p-card:hover { transform: translateY(-6px); box-shadow: 0 18px 40px -14px rgba(176,0,14,.30); }
+
+  /* Tab 按钮 */
+  .tab-btn { transition: all .25s ease; }
+  .tab-btn.active { background:#E60012; color:#fff; border-color:#E60012; }
+
+  /* Hero 斜切 */
+  .hero-clip { clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); }
+
+  /* 数字滚动 */
+  .num { font-variant-numeric: tabular-nums; }
+
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-thumb { background:#E60012; border-radius: 4px; }
+</style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+<!-- ================= 导航栏 ================= -->
+<header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
+    <a href="#top" class="flex items-center gap-2">
+      <span class="w-9 h-9 rounded-lg bg-anta flex items-center justify-center text-white font-black text-lg">A</span>
+      <span class="font-extrabold text-lg tracking-wide text-white nav-text">ANTA <span class="text-gold">安踏</span></span>
+    </a>
+    <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-white nav-text">
+      <a href="#positioning" class="hover:text-gold transition">品牌定位</a>
+      <a href="#products" class="hover:text-gold transition">产品矩阵</a>
+      <a href="#tech" class="hover:text-gold transition">核心科技</a>
+      <a href="#channel" class="hover:text-gold transition">全渠道零售</a>
+      <a href="#compete" class="hover:text-gold transition">竞争分析</a>
+      <a href="#future" class="hover:text-gold transition">未来规划</a>
+    </nav>
+    <button id="menuBtn" class="md:hidden text-white nav-text p-2" aria-label="菜单">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+  <!-- 移动端菜单 -->
+  <div id="mobileMenu" class="hidden md:hidden bg-antaDeep/95 backdrop-blur px-6 py-4">
+    <div class="flex flex-col gap-3 text-white text-sm font-medium">
+      <a href="#positioning" class="mob-link py-1">品牌定位</a>
+      <a href="#products" class="mob-link py-1">产品矩阵</a>
+      <a href="#tech" class="mob-link py-1">核心科技</a>
+      <a href="#channel" class="mob-link py-1">全渠道零售</a>
+      <a href="#compete" class="mob-link py-1">竞争分析</a>
+      <a href="#future" class="mob-link py-1">未来规划</a>
+    </div>
+  </div>
+</header>
+
+<!-- ================= Hero ================= -->
+<section id="top" class="hero-clip relative min-h-[92vh] flex items-center bg-antaDeep overflow-hidden">
+  <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=dynamic%20Chinese%20athletes%20sprinting%20and%20playing%20basketball%20in%20stadium%2C%20powerful%20motion%2C%20red%20tone%20cinematic%20lighting%2C%20professional%20sports%20brand%20commercial%20photography&image_size=landscape_16_9"
+       alt="安踏主视觉" class="absolute inset-0 w-full h-full object-cover opacity-40">
+  <div class="absolute inset-0 bg-gradient-to-r from-antaDeep via-antaDeep/75 to-transparent"></div>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-28 text-white w-full">
+    <p class="reveal inline-block bg-gold text-antaDeep font-bold text-xs sm:text-sm px-3 py-1 rounded-full mb-6 tracking-widest">大众专业运动 · 零售产品分析</p>
+    <h1 class="reveal text-4xl sm:text-6xl font-black leading-tight mb-4">Keep Moving<br class="sm:hidden"> 永不止步</h1>
+    <p class="reveal max-w-xl text-slate-200 text-sm sm:text-lg leading-relaxed mb-8">
+      科技赋能运动，兼顾日常穿搭。依托奥运国家队装备研发经验，打造跑步、篮球、综训、户外、生活休闲、儿童六大核心品类——专业可落地，大众买得起。
+    </p>
+    <div class="reveal flex flex-wrap gap-4">
+      <a href="#products" class="bg-anta hover:bg-antaDark transition px-7 py-3 rounded-full font-bold text-sm sm:text-base">探索产品矩阵</a>
+      <a href="#tech" class="border-2 border-white/60 hover:bg-white hover:text-antaDeep transition px-7 py-3 rounded-full font-bold text-sm sm:text-base">核心科技体系</a>
+    </div>
+    <!-- 数据统计 -->
+    <div class="reveal grid grid-cols-2 sm:grid-cols-4 gap-6 mt-16 max-w-3xl">
+      <div><p class="num text-3xl sm:text-4xl font-black text-gold" data-target="6">0</p><p class="text-xs sm:text-sm text-slate-300 mt-1">大核心产品品类</p></div>
+      <div><p class="num text-3xl sm:text-4xl font-black text-gold" data-target="82" data-suffix="%">0</p><p class="text-xs sm:text-sm text-slate-300 mt-1">氮科技能量回归率</p></div>
+      <div><p class="num text-3xl sm:text-4xl font-black text-gold" data-target="200" data-suffix="万+">0</p><p class="text-xs sm:text-sm text-slate-300 mt-1">风暴甲等单品年销量</p></div>
+      <div><p class="num text-3xl sm:text-4xl font-black text-gold" data-target="1" data-prefix="NO.">0</p><p class="text-xs sm:text-sm text-slate-300 mt-1">国内运动鞋服零售份额</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 品牌定位 ================= -->
+<section id="positioning" class="max-w-7xl mx-auto px-4 sm:px-6 py-20">
+  <div class="text-center mb-12 reveal">
+    <p class="text-anta font-bold tracking-widest text-sm mb-2">BRAND POSITIONING</p>
+    <h2 class="text-3xl sm:text-4xl font-black text-antaDeep">专业可落地 · 大众买得起</h2>
+    <p class="text-slate-500 mt-3 max-w-2xl mx-auto text-sm sm:text-base">
+      面向全年龄段大众运动消费人群，兼顾<b class="text-antaDeep">专业运动竞技</b>与<b class="text-antaDeep">日常通勤休闲</b>两大场景，
+      将国家队专业赛事科技下放至零售大货产品。
+    </p>
+  </div>
+
+  <!-- 四大核心价值 -->
+  <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+    <div class="reveal bg-white rounded-2xl p-7 border border-slate-100 p-card">
+      <div class="w-12 h-12 rounded-xl bg-antaLight flex items-center justify-center mb-5"><svg class="w-6 h-6 text-anta" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/></svg></div>
+      <h3 class="font-bold text-lg text-antaDeep mb-2">专业科技</h3>
+      <p class="text-sm text-slate-500 leading-relaxed">氮科技、虫洞科技等国家队同源科技下放，专业赛事研发积淀赋能零售大货。</p>
+    </div>
+    <div class="reveal bg-white rounded-2xl p-7 border border-slate-100 p-card">
+      <div class="w-12 h-12 rounded-xl bg-antaLight flex items-center justify-center mb-5"><svg class="w-6 h-6 text-anta" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+      <h3 class="font-bold text-lg text-antaDeep mb-2">高性价比</h3>
+      <p class="text-sm text-slate-500 leading-relaxed">主力产品 199–799 元价位，入门款低至百元级，同等性能下价格显著优于国际品牌。</p>
+    </div>
+    <div class="reveal bg-white rounded-2xl p-7 border border-slate-100 p-card">
+      <div class="w-12 h-12 rounded-xl bg-antaLight flex items-center justify-center mb-5"><svg class="w-6 h-6 text-anta" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"/></svg></div>
+      <h3 class="font-bold text-lg text-antaDeep mb-2">全场景适配</h3>
+      <p class="text-sm text-slate-500 leading-relaxed">跑步、篮球、综训、户外到生活休闲，专业竞技与通勤穿搭一站式覆盖。</p>
+    </div>
+    <div class="reveal bg-white rounded-2xl p-7 border border-slate-100 p-card">
+      <div class="w-12 h-12 rounded-xl bg-antaLight flex items-center justify-center mb-5"><svg class="w-6 h-6 text-anta" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z"/></svg></div>
+      <h3 class="font-bold text-lg text-antaDeep mb-2">国潮运动文化</h3>
+      <p class="text-sm text-slate-500 leading-relaxed">国家队背书 + 球星 IP 签名系列，把民族品牌荣誉感转化为年轻消费动力。</p>
+    </div>
+  </div>
+
+  <!-- 价格分层 -->
+  <div class="reveal bg-white rounded-2xl border border-slate-100 overflow-hidden">
+    <div class="grid sm:grid-cols-3">
+      <div class="p-7 border-b sm:border-b-0 sm:border-r border-slate-100">
+        <p class="text-xs font-bold text-slate-400 tracking-widest mb-2">基础入门款</p>
+        <p class="text-2xl font-black text-antaDeep mb-1">¥100–200</p>
+        <p class="text-sm text-slate-500">覆盖下沉市场与校园群体，降低运动消费门槛</p>
+      </div>
+      <div class="p-7 bg-antaLight/60 border-b sm:border-b-0 sm:border-r border-slate-100 relative">
+        <span class="absolute top-4 right-4 bg-anta text-white text-[10px] font-bold px-2 py-0.5 rounded-full">主力价格带</span>
+        <p class="text-xs font-bold text-anta tracking-widest mb-2">大众主力款</p>
+        <p class="text-2xl font-black text-anta mb-1">¥199–799</p>
+        <p class="text-sm text-slate-500">城市工薪与大众运动爱好者，走量爆品集中区间</p>
+      </div>
+      <div class="p-7">
+        <p class="text-xs font-bold text-slate-400 tracking-widest mb-2">专业旗舰款</p>
+        <p class="text-2xl font-black text-antaDeep mb-1">¥800–1299</p>
+        <p class="text-sm text-slate-500">碳板跑鞋、高端篮球鞋，树立品牌专业形象标杆</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 六大品类产品矩阵（Tab 筛选） ================= -->
+<section id="products" class="bg-white py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-10 reveal">
+      <p class="text-anta font-bold tracking-widest text-sm mb-2">PRODUCT MATRIX</p>
+      <h2 class="text-3xl sm:text-4xl font-black text-antaDeep">六大品类 · 零售产品矩阵</h2>
+      <p class="text-slate-500 mt-3 text-sm sm:text-base">点击分类标签，查看各品类重点系列与爆品</p>
+    </div>
+
+    <!-- 筛选 Tab -->
+    <div id="tabs" class="reveal flex flex-wrap justify-center gap-2 sm:gap-3 mb-12"></div>
+
+    <!-- 产品卡片容器 -->
+    <div id="productGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+  </div>
+</section>
+
+<!-- ================= 核心科技体系 ================= -->
+<section id="tech" class="bg-antaDeep py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-12 reveal">
+      <p class="text-gold font-bold tracking-widest text-sm mb-2">CORE TECHNOLOGY</p>
+      <h2 class="text-3xl sm:text-4xl font-black text-white">六大核心科技体系</h2>
+      <p class="text-slate-400 mt-3 text-sm sm:text-base">坚持「专业突破、品牌向上」，持续加大研发投入，以爆品科技驱动门店零售增长</p>
+    </div>
+
+    <!-- 氮科技主卡 -->
+    <div class="reveal relative rounded-2xl overflow-hidden mb-6 bg-gradient-to-r from-anta to-antaDark p-8 sm:p-10 text-white">
+      <div class="relative z-10 max-w-2xl">
+        <p class="text-gold font-bold text-sm tracking-widest mb-2">旗舰中底材料 · 国家队同款</p>
+        <h3 class="text-2xl sm:text-3xl font-black mb-3">氮科技 NITROEDGE / NITRO</h3>
+        <p class="text-sm sm:text-base text-white/90 leading-relaxed">超轻发泡中底，更轻、更弹、耐久度全面提升，广泛用于高端跑鞋与篮球鞋，是 C202 碳板竞速鞋、冠军跑鞋等旗舰产品的核心材料。</p>
+      </div>
+      <div class="absolute right-6 sm:right-12 top-1/2 -translate-y-1/2 text-center">
+        <p class="num text-5xl sm:text-7xl font-black text-gold" data-target="82" data-suffix="%">0</p>
+        <p class="text-xs sm:text-sm text-white/80 mt-1">能量回归率</p>
+      </div>
+    </div>
+
+    <!-- 其余五项科技 -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="reveal bg-white/5 border border-white/10 rounded-2xl p-7">
+        <h3 class="font-bold text-lg text-white mb-2">A-FLASHFOAM 虫洞科技</h3>
+        <p class="text-sm text-slate-400 leading-relaxed">高弹缓震中底，高效吸收落地冲击力，大众款主力材料，广泛用于基础慢跑鞋与综训鞋款，平衡脚感与成本。</p>
+      </div>
+      <div class="reveal bg-white/5 border border-white/10 rounded-2xl p-7">
+        <h3 class="font-bold text-lg text-white mb-2">防泼水风暴甲面料</h3>
+        <p class="text-sm text-slate-400 leading-relaxed">户外服装核心科技，防风、防水、防泼溅，面料耐磨抗撕裂，可应对风雨天气，兼顾实用性与外观。</p>
+      </div>
+      <div class="reveal bg-white/5 border border-white/10 rounded-2xl p-7">
+        <h3 class="font-bold text-lg text-white mb-2">抗扭转 TPU 支撑片</h3>
+        <p class="text-sm text-slate-400 leading-relaxed">用于篮球鞋与专业跑鞋，强化鞋身刚性、保护足弓，防止高强度运动中扭伤，支撑变向与急停。</p>
+      </div>
+      <div class="reveal bg-white/5 border border-white/10 rounded-2xl p-7">
+        <h3 class="font-bold text-lg text-white mb-2">BOA 旋钮系带系统</h3>
+        <p class="text-sm text-slate-400 leading-relaxed">搭载于高端训练鞋，旋转旋钮即可快速调节包裹松紧，穿脱便捷，训练场景随心切换。</p>
+      </div>
+      <div class="reveal bg-white/5 border border-white/10 rounded-2xl p-7">
+        <h3 class="font-bold text-lg text-white mb-2">环保再生面料</h3>
+        <p class="text-sm text-slate-400 leading-relaxed">部分服饰采用回收宝特瓶纺纱制成，ESG 环保产品矩阵持续扩容，契合绿色消费趋势。</p>
+      </div>
+      <div class="reveal bg-white/5 border border-white/10 rounded-2xl p-7">
+        <h3 class="font-bold text-lg text-white mb-2">防滑耐磨橡胶大底</h3>
+        <p class="text-sm text-slate-400 leading-relaxed">分区橡胶设计：前掌强化湿地防滑，后跟强化耐磨，适配城市柏油路、塑胶跑道与外场水泥地。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 目标消费群体 ================= -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 py-20">
+  <div class="text-center mb-12 reveal">
+    <p class="text-anta font-bold tracking-widest text-sm mb-2">TARGET CONSUMERS</p>
+    <h2 class="text-3xl sm:text-4xl font-black text-antaDeep">五类核心消费群体</h2>
+  </div>
+  <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
+    <div class="reveal bg-white rounded-2xl p-6 border border-slate-100 p-card text-center">
+      <div class="w-12 h-12 mx-auto rounded-full bg-antaLight flex items-center justify-center mb-4 text-anta font-black">01</div>
+      <h3 class="font-bold text-antaDeep mb-2">学生群体</h3>
+      <p class="text-xs text-slate-500 leading-relaxed">中小学与大学生，线下门店流量核心，偏好篮球鞋、平价跑鞋与休闲卫衣，看重性价比与颜值。</p>
+    </div>
+    <div class="reveal bg-white rounded-2xl p-6 border border-slate-100 p-card text-center">
+      <div class="w-12 h-12 mx-auto rounded-full bg-antaLight flex items-center justify-center mb-4 text-anta font-black">02</div>
+      <h3 class="font-bold text-antaDeep mb-2">健身慢跑人群</h3>
+      <p class="text-xs text-slate-500 leading-relaxed">25–45 岁大众健身与慢跑爱好者，选购 PG7、旅步与综训服饰，注重脚感、缓震与舒适性。</p>
+    </div>
+    <div class="reveal bg-white rounded-2xl p-6 border border-slate-100 p-card text-center">
+      <div class="w-12 h-12 mx-auto rounded-full bg-antaLight flex items-center justify-center mb-4 text-anta font-black">03</div>
+      <h3 class="font-bold text-antaDeep mb-2">专业进阶玩家</h3>
+      <p class="text-xs text-slate-500 leading-relaxed">马拉松跑者与篮球爱好者，选购 C202、KAI 欧文系列，为专业性能付费，重视科技参数。</p>
+    </div>
+    <div class="reveal bg-white rounded-2xl p-6 border border-slate-100 p-card text-center">
+      <div class="w-12 h-12 mx-auto rounded-full bg-antaLight flex items-center justify-center mb-4 text-anta font-black">04</div>
+      <h3 class="font-bold text-antaDeep mb-2">家庭消费客群</h3>
+      <p class="text-xs text-slate-500 leading-relaxed">父母 + 儿童组合消费，一站式选购成人与安踏儿童产品，显著提升门店连带率。</p>
+    </div>
+    <div class="reveal bg-white rounded-2xl p-6 border border-slate-100 p-card text-center">
+      <div class="w-12 h-12 mx-auto rounded-full bg-antaLight flex items-center justify-center mb-4 text-anta font-black">05</div>
+      <h3 class="font-bold text-antaDeep mb-2">通勤穿搭人群</h3>
+      <p class="text-xs text-slate-500 leading-relaxed">看重简约外观，选购休闲板鞋与基础运动卫衣，运动、日常两用上装高频穿搭。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 全渠道零售 ================= -->
+<section id="channel" class="bg-antaLight/50 py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-12 reveal">
+      <p class="text-anta font-bold tracking-widest text-sm mb-2">OMNI-CHANNEL RETAIL</p>
+      <h2 class="text-3xl sm:text-4xl font-black text-antaDeep">线上线下 · 全渠道一盘货</h2>
+      <p class="text-slate-500 mt-3 text-sm sm:text-base">线上负责种草、引流与下沉市场；线下负责试穿体验、高客单成交与家庭消费转化</p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-6">
+      <!-- 线下 -->
+      <div class="reveal bg-white rounded-2xl p-8 border border-slate-100">
+        <h3 class="font-bold text-xl text-antaDeep mb-6 flex items-center gap-2">
+          <svg class="w-6 h-6 text-anta" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 21v-7.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349m-16.5 11.65V9.35m0 0a3.001 3.001 0 003.75-.615A2.993 2.993 0 009.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 002.25 1.016c.896 0 1.7-.393 2.25-1.016a3.001 3.001 0 003.75.614m-16.5 0a3.004 3.004 0 01-.621-4.72L4.318 3.44A1.5 1.5 0 015.378 3h13.243a1.5 1.5 0 011.06.44l1.19 1.189a3 3 0 01-.621 4.72m-13.5 8.65h3.75a.75.75 0 00.75-.75V13.5a.75.75 0 00-.75-.75H6.75a.75.75 0 00-.75.75v3.15c0 .415.336.75.75.75z"/></svg>
+          线下实体门店
+        </h3>
+        <ul class="space-y-5 text-sm text-slate-600">
+          <li class="flex gap-3">
+            <span class="shrink-0 w-6 h-6 rounded-full bg-anta text-white text-xs font-bold flex items-center justify-center">1</span>
+            <span><b class="text-antaDeep">Arena 竞技场店 / Palace 殿堂级大店</b>：全品类陈列，旗舰款、球星款、冠军系列重点展示，体验感最强、店效最高。</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="shrink-0 w-6 h-6 rounded-full bg-anta text-white text-xs font-bold flex items-center justify-center">2</span>
+            <span><b class="text-antaDeep">标准店 / 基础门店</b>：主推 PG7、狂潮、风暴甲与基础休闲服饰等大众爆品，SKU 精简、周转更快。</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="shrink-0 w-6 h-6 rounded-full bg-anta text-white text-xs font-bold flex items-center justify-center">3</span>
+            <span><b class="text-antaDeep">奥莱折扣店</b>：过季库存与老款产品以折扣零售为主，清理库存，覆盖价格敏感客户。</span>
+          </li>
+        </ul>
+      </div>
+      <!-- 线上 -->
+      <div class="reveal bg-white rounded-2xl p-8 border border-slate-100">
+        <h3 class="font-bold text-xl text-antaDeep mb-6 flex items-center gap-2">
+          <svg class="w-6 h-6 text-anta" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"/></svg>
+          线上电商渠道
+        </h3>
+        <ul class="space-y-5 text-sm text-slate-600">
+          <li class="flex gap-3">
+            <span class="shrink-0 w-6 h-6 rounded-full bg-anta text-white text-xs font-bold flex items-center justify-center">1</span>
+            <span><b class="text-antaDeep">天猫 · 京东 · 抖音电商 · 私域小程序</b>：电商专供款主打性价比基础款，同时同步发售旗舰新品。</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="shrink-0 w-6 h-6 rounded-full bg-anta text-white text-xs font-bold flex items-center justify-center">2</span>
+            <span><b class="text-antaDeep">短视频直播种草测款</b>：快速测试新品市场反馈，反哺线下选品与铺货决策。</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="shrink-0 w-6 h-6 rounded-full bg-anta text-white text-xs font-bold flex items-center justify-center">3</span>
+            <span><b class="text-antaDeep">一盘货精细化管理</b>：线上线下库存打通，优化库存周转，降低折扣损耗。</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 市场零售表现 -->
+    <div class="reveal mt-6 grid grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="bg-white rounded-2xl p-6 text-center border border-slate-100">
+        <p class="text-2xl sm:text-3xl font-black text-anta">数百万双<span class="text-base font-bold text-slate-400">/年</span></p>
+        <p class="text-xs text-slate-500 mt-2">C 家族、马赫、旅步等跑鞋系列年度销量</p>
+      </div>
+      <div class="bg-white rounded-2xl p-6 text-center border border-slate-100">
+        <p class="num text-2xl sm:text-3xl font-black text-anta" data-target="200" data-suffix="万+件">0</p>
+        <p class="text-xs text-slate-500 mt-2">风暴甲、大师腰等服饰单品年销量</p>
+      </div>
+      <div class="bg-white rounded-2xl p-6 text-center border border-slate-100">
+        <p class="text-2xl sm:text-3xl font-black text-anta">3–14<span class="text-base font-bold text-slate-400">岁</span></p>
+        <p class="text-xs text-slate-500 mt-2">安踏儿童独立板块，赛道排名前列</p>
+      </div>
+      <div class="bg-white rounded-2xl p-6 text-center border border-slate-100">
+        <p class="text-2xl sm:text-3xl font-black text-anta">行业首位</p>
+        <p class="text-xs text-slate-500 mt-2">中国运动鞋服零售市场份额常年领先</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 竞品对比与短板 ================= -->
+<section id="compete" class="max-w-7xl mx-auto px-4 sm:px-6 py-20">
+  <div class="text-center mb-12 reveal">
+    <p class="text-anta font-bold tracking-widest text-sm mb-2">COMPETITIVE EDGE</p>
+    <h2 class="text-3xl sm:text-4xl font-black text-antaDeep">竞品对比 · 优势与短板</h2>
+  </div>
+
+  <div class="space-y-4 mb-8">
+    <div class="reveal bg-white rounded-2xl p-6 sm:p-7 border border-slate-100 grid md:grid-cols-[160px_1fr] gap-4 items-start">
+      <div>
+        <p class="text-xs text-slate-400 font-bold tracking-widest">VS</p>
+        <h3 class="font-black text-lg text-antaDeep">李宁</h3>
+        <p class="text-xs text-slate-400 mt-1">国潮设计导向</p>
+      </div>
+      <p class="text-sm text-slate-600 leading-relaxed">竞品侧重国潮文化与高端设计溢价；安踏<b class="text-antaDeep">性价比更强、大货稳定性更好、品类更均衡</b>，跑步、儿童品类零售规模领先。</p>
+    </div>
+    <div class="reveal bg-white rounded-2xl p-6 sm:p-7 border border-slate-100 grid md:grid-cols-[160px_1fr] gap-4 items-start">
+      <div>
+        <p class="text-xs text-slate-400 font-bold tracking-widest">VS</p>
+        <h3 class="font-black text-lg text-antaDeep">耐克 / 阿迪达斯</h3>
+        <p class="text-xs text-slate-400 mt-1">国际高端品牌</p>
+      </div>
+      <p class="text-sm text-slate-600 leading-relaxed">国际品牌定价更高；安踏以<b class="text-antaDeep">国家队科技本土化</b>打造更适配国人脚型的产品，线下门店覆盖更广、入门价位选择丰富，售后与供应链响应更快。</p>
+    </div>
+    <div class="reveal bg-white rounded-2xl p-6 sm:p-7 border border-slate-100 grid md:grid-cols-[160px_1fr] gap-4 items-start">
+      <div>
+        <p class="text-xs text-slate-400 font-bold tracking-widest">VS</p>
+        <h3 class="font-black text-lg text-antaDeep">特步 / 361 度</h3>
+        <p class="text-xs text-slate-400 mt-1">平价跑鞋赛道</p>
+      </div>
+      <p class="text-sm text-slate-600 leading-relaxed">竞品主打平价跑鞋；安踏拥有<b class="text-antaDeep">更完整的全品类矩阵</b>，篮球、儿童、户外服饰产品线更强，品牌势能与门店零售运营能力领先。</p>
+    </div>
+  </div>
+
+  <!-- 现存短板 -->
+  <div class="reveal bg-white rounded-2xl p-8 border-t-4 border-gold">
+    <h3 class="font-bold text-xl text-antaDeep mb-6 flex items-center gap-2">
+      <svg class="w-6 h-6 text-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>
+      产品现存短板
+    </h3>
+    <div class="grid md:grid-cols-3 gap-6 text-sm text-slate-600">
+      <div class="flex gap-3"><span class="shrink-0 w-6 h-6 rounded-full bg-gold text-white text-xs font-bold flex items-center justify-center">1</span><span>高端时尚线产品辨识度不足，潮流穿搭赛道竞争力弱于部分竞品。</span></div>
+      <div class="flex gap-3"><span class="shrink-0 w-6 h-6 rounded-full bg-gold text-white text-xs font-bold flex items-center justify-center">2</span><span>部分基础款设计同质化，产品外观创新迭代速度有限。</span></div>
+      <div class="flex gap-3"><span class="shrink-0 w-6 h-6 rounded-full bg-gold text-white text-xs font-bold flex items-center justify-center">3</span><span>高端旗舰产品定价上升，会流失一部分极致低价用户。</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 零售营销策略 ================= -->
+<section class="bg-white py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-12 reveal">
+      <p class="text-anta font-bold tracking-widest text-sm mb-2">RETAIL MARKETING</p>
+      <h2 class="text-3xl sm:text-4xl font-black text-antaDeep">爆品驱动 · 五大零售营销策略</h2>
+      <p class="text-slate-500 mt-3 text-sm sm:text-base">基础款保客流，旗舰款提升品牌形象，IP 球星款制造话题</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
+      <div class="reveal bg-slate-50 rounded-2xl p-6 p-card">
+        <p class="text-3xl font-black text-anta/20 mb-2">01</p>
+        <h3 class="font-bold text-antaDeep mb-2">爆品主推</h3>
+        <p class="text-xs text-slate-500 leading-relaxed">门店资源倾斜，PG7、狂潮、风暴甲占据陈列 C 位，导购重点推荐拉动销量。</p>
+      </div>
+      <div class="reveal bg-slate-50 rounded-2xl p-6 p-card">
+        <p class="text-3xl font-black text-anta/20 mb-2">02</p>
+        <h3 class="font-bold text-antaDeep mb-2">IP 联名营销</h3>
+        <p class="text-xs text-slate-500 leading-relaxed">欧文球星系列、冠军国家队系列制造话题，带动新品上市热度与年轻客流。</p>
+      </div>
+      <div class="reveal bg-slate-50 rounded-2xl p-6 p-card">
+        <p class="text-3xl font-black text-anta/20 mb-2">03</p>
+        <h3 class="font-bold text-antaDeep mb-2">场景化陈列</h3>
+        <p class="text-xs text-slate-500 leading-relaxed">门店按跑步、篮球、综训、儿童分区，引导一站式选购，提高连带销售。</p>
+      </div>
+      <div class="reveal bg-slate-50 rounded-2xl p-6 p-card">
+        <p class="text-3xl font-black text-anta/20 mb-2">04</p>
+        <h3 class="font-bold text-antaDeep mb-2">全渠道内容</h3>
+        <p class="text-xs text-slate-500 leading-relaxed">抖音等平台科普产品科技与穿搭，线上种草引流，到店试穿转化。</p>
+      </div>
+      <div class="reveal bg-slate-50 rounded-2xl p-6 p-card">
+        <p class="text-3xl font-black text-anta/20 mb-2">05</p>
+        <h3 class="font-bold text-antaDeep mb-2">季节上新节奏</h3>
+        <p class="text-xs text-slate-500 leading-relaxed">春慢跑、夏透气、秋风暴甲、冬保暖棉服，按季轮换保持门店新鲜感。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 未来产品规划 ================= -->
+<section id="future" class="max-w-7xl mx-auto px-4 sm:px-6 py-20">
+  <div class="text-center mb-12 reveal">
+    <p class="text-anta font-bold tracking-widest text-sm mb-2">FUTURE ROADMAP</p>
+    <h2 class="text-3xl sm:text-4xl font-black text-antaDeep">未来产品发展六大规划</h2>
+  </div>
+  <div class="grid md:grid-cols-2 gap-6">
+    <div class="reveal relative bg-antaDeep text-white rounded-2xl p-8 overflow-hidden">
+      <span class="absolute -top-4 -right-2 text-8xl font-black text-white/5 select-none">01</span>
+      <h3 class="font-bold text-xl mb-3 text-gold">深耕核心品类</h3>
+      <p class="text-sm text-slate-300 leading-relaxed">持续深耕跑步、篮球两大核心品类，迭代升级氮科技等核心材料，将国家队专业科技持续下放大众零售产品。</p>
+    </div>
+    <div class="reveal relative bg-white border border-slate-100 rounded-2xl p-8 overflow-hidden p-card">
+      <span class="absolute -top-4 -right-2 text-8xl font-black text-anta/5 select-none">02</span>
+      <h3 class="font-bold text-xl mb-3 text-antaDeep">拓展细分增量</h3>
+      <p class="text-sm text-slate-500 leading-relaxed">强化女子运动、户外轻徒步品类，扩充服饰产品线，挖掘女性消费市场增量。</p>
+    </div>
+    <div class="reveal relative bg-white border border-slate-100 rounded-2xl p-8 overflow-hidden p-card">
+      <span class="absolute -top-4 -right-2 text-8xl font-black text-anta/5 select-none">03</span>
+      <h3 class="font-bold text-xl mb-3 text-antaDeep">绿色环保升级</h3>
+      <p class="text-sm text-slate-500 leading-relaxed">推进产品绿色环保升级，扩大再生面料使用，开发低碳环保产品。</p>
+    </div>
+    <div class="reveal relative bg-white border border-slate-100 rounded-2xl p-8 overflow-hidden p-card">
+      <span class="absolute -top-4 -right-2 text-8xl font-black text-anta/5 select-none">04</span>
+      <h3 class="font-bold text-xl mb-3 text-antaDeep">货品精细化运营</h3>
+      <p class="text-sm text-slate-500 leading-relaxed">线上线下货品精细化区分，减少同款内卷，优化库存周转，降低折扣损耗，提升门店盈利能力。</p>
+    </div>
+    <div class="reveal relative bg-white border border-slate-100 rounded-2xl p-8 overflow-hidden p-card">
+      <span class="absolute -top-4 -right-2 text-8xl font-black text-anta/5 select-none">05</span>
+      <h3 class="font-bold text-xl mb-3 text-antaDeep">沉浸式大店体验</h3>
+      <p class="text-sm text-slate-500 leading-relaxed">持续打造 Arena 竞技场、殿堂级大店，构建沉浸式产品体验空间，强化专业运动品牌形象。</p>
+    </div>
+    <div class="reveal relative bg-white border border-slate-100 rounded-2xl p-8 overflow-hidden p-card">
+      <span class="absolute -top-4 -right-2 text-8xl font-black text-anta/5 select-none">06</span>
+      <h3 class="font-bold text-xl mb-3 text-antaDeep">全球化布局</h3>
+      <p class="text-sm text-slate-500 leading-relaxed">面向海外市场输出安踏零售产品线，重点拓展东南亚、中东市场。</p>
+    </div>
+  </div>
+
+  <!-- 总结 -->
+  <div class="reveal mt-8 bg-antaLight rounded-2xl p-8 sm:p-10 text-center">
+    <h3 class="font-black text-2xl text-antaDeep mb-3">完整矩阵 × 自主科技 × 分层价格</h3>
+    <p class="text-sm sm:text-base text-slate-600 leading-relaxed max-w-3xl mx-auto">
+      安踏零售产品以爆品驱动线下门店增长，线上线下一盘货协同，学生、家庭、运动爱好者多群体全覆盖。
+      凭借稳定供应链、高性价比与国家队科技背书，持续领跑国内大众专业运动零售赛道，进一步提升单店零售效率与品牌影响力。
+    </p>
+  </div>
+</section>
+
+<!-- ================= 页脚 ================= -->
+<footer class="bg-antaDeep text-slate-300 py-10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-2">
+      <span class="w-8 h-8 rounded-lg bg-anta flex items-center justify-center text-white font-black">A</span>
+      <span class="font-bold text-white">ANTA 安踏 · 大众专业运动零售产品展示</span>
+    </div>
+    <p class="text-xs text-slate-400">Keep Moving 永不止步 · 专业科技 / 高性价比 / 全场景适配 / 国潮运动文化</p>
+  </div>
+</footer>
+
+<!-- 返回顶部 -->
+<button id="backTop" class="hidden fixed bottom-6 right-6 z-50 w-11 h-11 rounded-full bg-anta text-white shadow-lg hover:bg-antaDark transition items-center justify-center" aria-label="返回顶部">
+  <svg class="w-5 h-5 mx-auto" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
+</button>
+
+<script>
+/* ================= 图片生成 ================= */
+const IMG = (p, size) => `https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=${encodeURIComponent(p)}&image_size=${size || 'landscape_4_3'}`;
+
+/* ================= 产品数据（严格依据报告内容） ================= */
+const categories = [
+  { key: 'all',       label: '全部' },
+  { key: 'run',       label: '跑步系列' },
+  { key: 'basketball',label: '篮球系列' },
+  { key: 'training',  label: '综训健身' },
+  { key: 'outdoor',   label: '户外风暴甲' },
+  { key: 'lifestyle', label: '生活休闲' },
+  { key: 'kids',      label: '安踏儿童' }
+];
+
+const products = [
+  /* ---------- 跑步 ---------- */
+  { cat:'run', catName:'跑步', name:'PG7 系列 大众缓震慢跑鞋', price:'入门价位',
+    tags:['大体重友好','长距离舒适','复购率高'],
+    desc:'大众入门缓震慢跑鞋，主打大体重友好与长距离舒适，面向新手跑者与通勤人群，常年稳居门店基础爆款。',
+    img: IMG('grey and red cushioned jogging shoes on city road, professional product photography, soft morning light, sportswear advertisement') },
+  { cat:'run', catName:'跑步', name:'C202 6 / C202 7 碳板竞速跑鞋', price:'¥800–1299 旗舰',
+    tags:['碳板竞速','氮科技中底','马拉松比赛级'],
+    desc:'碳板竞速马拉松跑鞋，搭载氮科技中底，专业比赛级装备，面向马拉松爱好者与进阶跑者，品牌专业形象标杆。',
+    img: IMG('red carbon plate marathon racing shoes on athletic track with speed motion blur, dramatic lighting, high performance sport product shot') },
+  { cat:'run', catName:'跑步', name:'马赫系列 速度训练跑鞋', price:'专业训练',
+    tags:['轻量化','间歇训练','路跑练习'],
+    desc:'速度训练跑鞋，兼顾日常训练与比赛，轻量化设计，适合间歇训练与路跑练习。',
+    img: IMG('lightweight red speed training running shoes floating on dark background, dynamic studio lighting, professional sports product photography') },
+  { cat:'run', catName:'跑步', name:'旅步系列 轻量基础慢跑鞋', price:'入门主力',
+    tags:['轻便透气','5 公里短距离','日常走路'],
+    desc:'轻量基础慢跑鞋，主打轻便透气，适合 5 公里以内短距离慢跑与日常走路，入门款主力。',
+    img: IMG('white lightweight breathable jogging shoes with mesh upper, clean studio background, casual sports product photography') },
+  { cat:'run', catName:'跑步', name:'安踏冠军跑鞋系列', price:'中高端',
+    tags:['国家队同源','氮科技','FLASHFOAM'],
+    desc:'国家队同源科技，氮科技 + FLASHFOAM 虫洞科技双加持，长距离缓震训练款，定位中高端零售。',
+    img: IMG('champion edition long distance running shoes red and gold details on podium, premium studio lighting, luxury sport product shot') },
+
+  /* ---------- 篮球 ---------- */
+  { cat:'basketball', catName:'篮球', name:'KAI 欧文签名系列 KAI1 / KAI2', price:'顶级签名款',
+    tags:['球星 IP','变向突破','高支撑抗扭转'],
+    desc:'安踏顶级球星产品线，主打变向、突破与高强度实战，高支撑、抗扭转，线下门店重点陈列，自带 IP 流量。',
+    img: IMG('red signature basketball shoes on indoor court floor, arena lights, professional basketball product photography, dramatic shadows') },
+  { cat:'basketball', catName:'篮球', name:'狂潮系列 大众实战篮球鞋', price:'中端高性价比',
+    tags:['校园主力','耐磨抗扭','外场水泥地'],
+    desc:'大众中端实战篮球鞋，性价比极高，校园学生群体主力消费款，耐磨、抗扭，适配外场水泥地。',
+    img: IMG('black and red durable outdoor basketball shoes on concrete streetball court, urban sport lifestyle photography') },
+  { cat:'basketball', catName:'篮球', name:'水花系列 轻量化后卫鞋', price:'销量稳定',
+    tags:['后卫实战','轻便透气','投射型'],
+    desc:'轻量化后卫实战鞋，适合投射型球员，轻便透气，线上线下销量稳定。',
+    img: IMG('lightweight low top guard basketball shoes white and red, bright studio product photography, basketball in background') },
+  { cat:'basketball', catName:'篮球', name:'休闲篮球文化鞋', price:'潮流穿搭',
+    tags:['复古板鞋','弱化竞技','日常出街'],
+    desc:'复古篮球板鞋造型，弱化竞技性能，主打穿搭属性，满足日常出街需求。',
+    img: IMG('retro basketball sneakers red and white worn with streetwear jeans, urban fashion lifestyle photography, vintage style') },
+
+  /* ---------- 综训 ---------- */
+  { cat:'training', catName:'综训', name:'雳炼缓震训练跑鞋', price:'综训代表款',
+    tags:['稳定支撑','力量训练','有氧跳绳'],
+    desc:'稳定支撑应对健身房多场景，兼顾力量训练、有氧操与跳绳，男女款齐全。',
+    img: IMG('red cross training shoes in modern gym with dumbbells, dynamic fitness atmosphere, professional product photography') },
+  { cat:'training', catName:'综训', name:'大师腰紧身服饰系列', price:'年销 200 万+件',
+    tags:['高弹透气','紧身衣','运动内衣'],
+    desc:'面料高弹透气，覆盖训练紧身衣、运动内衣、训练外套，适配健身房、居家训练与日常轻运动。',
+    img: IMG('black compression training sportswear apparel on athletic model, dark studio with red accent lighting, fitness fashion photography') },
+
+  /* ---------- 户外 ---------- */
+  { cat:'outdoor', catName:'户外', name:'风暴甲 全天候防护外套', price:'服装核心爆品',
+    tags:['防风防水防泼溅','耐磨抗撕裂','四季可卖'],
+    desc:'安踏服装核心爆品，全天候户外防护外套，防风、防水、防泼溅，耐磨抗撕裂面料应对风雨天气，适合城市通勤与短途徒步，四季可卖、门店服装类主推。',
+    img: IMG('athlete wearing red waterproof storm jacket walking in heavy rain city street, water droplets on fabric, cinematic outdoor apparel photography') },
+
+  /* ---------- 生活休闲 ---------- */
+  { cat:'lifestyle', catName:'生活', name:'安踏经典小白板鞋', price:'价格亲民',
+    tags:['简约百搭','连带销售','通勤校园'],
+    desc:'款式简约百搭、价格亲民，是门店连带销售主力，消费者常搭配运动鞋与休闲服饰一起购买，提升客单价。',
+    img: IMG('classic white sneakers minimal clean design on light background, casual fashion product photography, soft shadows') },
+  { cat:'lifestyle', catName:'生活', name:'复古阿甘鞋', price:'复古慢跑',
+    tags:['复古造型','日常穿搭','年轻客群'],
+    desc:'复古慢跑鞋造型，满足年轻人通勤、校园穿搭需求，与卫衣、休闲长裤、针织外套轻松搭配。',
+    img: IMG('vintage retro jogger sneakers beige and red tones, 90s nostalgic style, fashion editorial product photography') },
+
+  /* ---------- 儿童 ---------- */
+  { cat:'kids', catName:'儿童', name:'安踏儿童 3–14 岁全品类', price:'独立零售板块',
+    tags:['安全亲肤面料','加固耐磨','独立陈列区'],
+    desc:'覆盖儿童跑步、儿童篮球、儿童户外与校园校服运动套装，全国门店设置独立陈列区，安全亲肤面料与加固耐磨设计适配校园体育课，国内儿童运动零售赛道排名前列。',
+    img: IMG('happy Chinese children in red sportswear running and playing basketball on school playground, lively kids sports lifestyle photography') }
+];
+
+/* ================= 渲染 Tab 与产品 ================= */
+const tabsEl = document.getElementById('tabs');
+const gridEl = document.getElementById('productGrid');
+
+tabsEl.innerHTML = categories.map(c =>
+  `<button data-cat="${c.key}" class="tab-btn ${c.key==='all'?'active':''} text-xs sm:text-sm font-medium px-4 py-2 rounded-full border border-slate-300 text-slate-600 hover:border-anta hover:text-anta">${c.label}</button>`
+).join('');
+
+function renderProducts(cat){
+  const list = cat === 'all' ? products : products.filter(p => p.cat === cat);
+  gridEl.innerHTML = list.map(p => `
+    <article class="p-card bg-slate-50 rounded-2xl overflow-hidden border border-slate-100 flex flex-col">
+      <div class="relative h-44 overflow-hidden">
+        <img src="${p.img}" alt="${p.name}" loading="lazy" class="w-full h-full object-cover">
+        <span class="absolute top-3 left-3 bg-anta text-white text-xs font-bold px-2.5 py-1 rounded-full">${p.catName}</span>
+      </div>
+      <div class="p-5 flex flex-col flex-1">
+        <div class="flex items-start justify-between gap-2 mb-2">
+          <h3 class="font-bold text-antaDeep leading-snug">${p.name}</h3>
+          <span class="shrink-0 text-xs font-bold text-anta bg-antaLight px-2 py-1 rounded">${p.price}</span>
+        </div>
+        <p class="text-sm text-slate-500 leading-relaxed flex-1">${p.desc}</p>
+        <div class="flex flex-wrap gap-1.5 mt-4">
+          ${p.tags.map(t => `<span class="text-xs text-slate-500 bg-white border border-slate-200 px-2 py-0.5 rounded-full">${t}</span>`).join('')}
+        </div>
+      </div>
+    </article>`).join('');
+}
+renderProducts('all');
+
+tabsEl.addEventListener('click', e => {
+  const btn = e.target.closest('.tab-btn');
+  if(!btn) return;
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderProducts(btn.dataset.cat);
+});
+
+/* ================= 滚动入场动画 ================= */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(en => { if(en.isIntersecting){ en.target.classList.add('show'); io.unobserve(en.target); } });
+}, { threshold: .12 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* ================= 数字滚动 ================= */
+const numIO = new IntersectionObserver(entries => {
+  entries.forEach(en => {
+    if(!en.isIntersecting) return;
+    const el = en.target, target = +el.dataset.target;
+    const prefix = el.dataset.prefix || '', suffix = el.dataset.suffix || '';
+    const t0 = performance.now(), dur = 1400;
+    (function tick(t){
+      const p = Math.min((t - t0) / dur, 1);
+      el.textContent = prefix + Math.round(target * (1 - Math.pow(1 - p, 3))) + suffix;
+      if(p < 1) requestAnimationFrame(tick);
+    })(t0);
+    numIO.unobserve(el);
+  });
+}, { threshold: .5 });
+document.querySelectorAll('.num').forEach(el => numIO.observe(el));
+
+/* ================= 导航栏滚动变色 ================= */
+const navbar = document.getElementById('navbar');
+function onScroll(){
+  const scrolled = window.scrollY > 40;
+  navbar.classList.toggle('bg-antaDeep/95', scrolled);
+  navbar.classList.toggle('backdrop-blur', scrolled);
+  navbar.classList.toggle('shadow-lg', scrolled);
+  const btn = document.getElementById('backTop');
+  btn.classList.toggle('hidden', window.scrollY < 500);
+  btn.classList.toggle('flex', window.scrollY >= 500);
+}
+window.addEventListener('scroll', onScroll, { passive:true });
+onScroll();
+
+/* ================= 移动端菜单 ================= */
+const menuBtn = document.getElementById('menuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+document.querySelectorAll('.mob-link').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+/* ================= 返回顶部 ================= */
+document.getElementById('backTop').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+</script>
+</body>
+</html>
